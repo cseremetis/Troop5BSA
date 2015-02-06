@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--created Febrary 4, 2015 by Christian Seremetis-->
+
+<head>
+    <title>Troop 5 BSA</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+
+
+<body background="photos/lake.JPG">
+    <div class="wrapper">
+    <!--navbar-->
+        
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+                <ul class="nav nav-pills">
+                    <li role="presentation" class="active"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="faqs">FAQs</a></li>
+                    <li role="presentation"><a href="UpcomingTrips">Upcoming Trips</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+
+        <div class="row text-center">
+            <h1 id="homeLabel">Welcome to Troop 5</h1>
+        </div>
+        <div class="container">
+            <div class="col-md text-center">
+                <img id="symbol" width="200px" height="200px" src="http://jasonhewlett.com/wp-content/uploads/2014/05/boy-scouts.jpg" onclick="change()">
+                <script type="text/javascript">
+                    function change() {
+                        var pic = document.getElementById('symbol');
+                        if (pic.src.match("http://jasonhewlett.com/wp-content/uploads/2014/05/boy-scouts.jpg")) {
+                            pic.src = "http://wonderopolis.org/wp-content/uploads/2011/03/youth-with-silly-face_shutterstock_7546201.jpg";
+                        } else {
+                            pic.src = "http://jasonhewlett.com/wp-content/uploads/2014/05/boy-scouts.jpg";
+                        };
+                    }
+                </script>
+            </div>
+            <h3>
+                In 1910, scouting was brought to America through a simple act of kindness. In 1925, the spirit of scouting reached a small village in northern New Jersey. Troop 5 is one of the oldest continually operating youth organizations serving the Ridgewood community.  Troop 5 was orginally chartered through the Ridgewood Glen Rock Council that subsequently merged into the Bergen Council and eventually into the Northern New Jersey council.  We still camp every year at Yaw Paw, the original summer camp for the Ridgewood Glen Rock Council.  A photo of the original lodge is shown on the left.  We meet throughout the year on Monday nights at First Presbyterian Church.  We have over 50 registered scouts forming five patrols led by the Senior Patrol leader and Troop Leadership Council, an all-youth leadership team guided and assisted by the adult leaders.  We have monthly outings including local overnight camps, day hikes, and treks to local points of interest such as the Intrepid Air and Space Museum.  New scouts and adult volunteers are always welcome.
+            </h3>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+

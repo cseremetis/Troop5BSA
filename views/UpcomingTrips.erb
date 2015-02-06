@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!--created by Christian Seremetis on February 5, 2014-->
+<!--displays upcoming troops on the Troop 5 official website-->
+
+<head>
+    <title>Troop 5 BSA FAQs</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+
+<body background="photos/lake.JPG">
+    <div class="wrapper">
+        <!--navbar-->
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+                <ul class="nav nav-pills">
+                    <li role="presentation" class="active"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="faqs">FAQs</a></li>
+                    <li role="presentation"><a href="UpcomingTrips">Upcoming Trips</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row text-center">
+        <h1 id="tripsLabel">Upcoming Trips</h1>
+    </div>
+    
+    <!--where trips are displayed-->
+    <%@allTrips.each do |a|%>
+        <div class="container">
+            <div class="col-md text-center">
+                <h1><%=a.title%></h1>
+            </div>
+            <div class="col-md text-center">
+                <h3>
+                    <%=a.notification%>
+                </h3>
+            </div>
+        </div>
+        <br>
+    <%end%>
+</body>
+
+

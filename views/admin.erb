@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--created by Christian Seremetis on February 5, 2014-->
+<!--this page is used for administrative purposes
+    To change information appearing on different pages,
+    refer to this form-->
+<html>
+    <head>
+        <title>You're a Wizard</title>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+
+    <body background="photos/lake.JPG">
+        <div class="wrapper">
+
+            <!--navbar-->
+            <div class="row">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+                    <ul class="nav nav-pills">
+                       <li role="presentation" class="active"><a href="/">Home</a></li>
+                        <li role="presentation"><a href="faqs">FAQs</a></li>
+                        <li role="presentation"><a href="UpcomingTrips">Upcoming Trips</a></li>
+                        <li role="presentation"><a href="master33034112AZY774NNOO0">Master Controller</a></li>
+                        <li role="presentation"><a href="admin33034112AZY774NNOO0">Administrative Form</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="row text-center">
+                <h1 id="adminLabel">CONGRATULATIONS ADMIN YOU'RE A WIZARD</h1>
+            </div>
+            <div class="container" id="adminBox">
+                <!--this is where the admin can enter information for new pages-->
+                <form type="input" action="addPage" method="POST">
+                    <div class="col-md text-center">
+                        <!--title of the new caption-->
+                        <h2>Title of new caption:</h2>
+                        <input type="text" name="title">
+                    </div>
+                    <div class="col-md text-center">
+                        <!--form id for the new caption-->
+                        <!--radio buttons are used to select where the caption will go-->
+                        <h2>Form that you want to add your new caption to:</h2>
+                        <input type="radio" name="form_id" value="FAQs" checked><label for="FAQs">FAQs</label>
+                        <br>
+                        <input type="radio" name="form_id" value="Upcoming Trips" checked><label for="upcomingTrips">Upcoming Trips</label>
+                    </div>
+                    <div class="col-md text-center">
+                        <!--the caption itself-->
+                        <h2>Caption:</h2>
+                        <textarea class="text" name="description" rows="15" cols="150">
+                            Write Here
+                        </textarea>
+                    </div>
+                    <div class="col-md text-center">
+                        <input type="submit" value="add page">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--created by Christian Seremetis on February 5, 2014-->
+<!--this page is used for administrative purposes
+    To change information appearing on different pages,
+    refer to this form-->
+<html>
+    <head>
+        <title>Master!!</title>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+
+    <body background="photos/lake.JPG">
+        <div class="wrapper">
+            <!--navbar-->
+            <div class="row">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+                    <ul class="nav nav-pills">
+                       <li role="presentation" class="active"><a href="/">Home</a></li>
+                        <li role="presentation"><a href="faqs">FAQs</a></li>
+                        <li role="presentation"><a href="UpcomingTrips">Upcoming Trips</a></li>
+                        <li role="presentation"><a href="master33034112AZY774NNOO0">Master Controller</a></li>
+                        <li role="presentation"><a href="admin33034112AZY774NNOO0">Administrative Form</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="row text-center">
+                <h1>Master</h1>
+            </div>
+            <div class="col-md text-center">
+                <!--this is where captions can be searched and deleted-->
+                <h2>Search and delete captions here:</h2>
+                <form type="input" action="delete" method=POST>
+                    <input type="text" name="title">
+                    <input type="submit" value="delete caption">
+                </form>
+            </div>
+            <br>
+            <!--this is where all forms are displayed
+            form titles are displayed under the page that they appear on-->
+            <%@every.each do |a|%>
+                <div class="container">
+                    <div class="col-md text-center">
+                        <h1><%=a.form_id%></h1>
+                    </div>
+                    <div class="col-md text-center">
+                        <h3><%=a.title%></h3>
+                    </div>
+                </div>
+                <br>
+            <%end%>
+        </div>
+    </body>
+</html>
+
+
