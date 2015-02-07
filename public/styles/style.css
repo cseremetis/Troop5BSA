@@ -127,7 +127,17 @@ textarea{
     -webkit-transition-timing-function: linear;
 }
 
+/*h1 label on edit page*/
+#editLabel:hover{
+    -webkit-animation-name: admin;
+    -webkit-animation-duration:0.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transition-timing-function: linear;
+}
 
+#captionLabel{
+    color: white;
+}
 
 
 
