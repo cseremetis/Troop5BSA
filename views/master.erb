@@ -37,6 +37,15 @@
                 </form>
             </div>
             <br>
+            <div class="col-md text-center">
+                <!--this is where captions can be searched and edited-->
+                <h2>Search and Edit captions here:</h2>
+                <form type="input" action="edit" method=POST> 
+                    <input type="text" name="title">
+                    <input type="submit" value="edit caption">
+                </form>
+            </div>
+            <br>
             <!--this is where all forms are displayed
             form titles are displayed under the page that they appear on-->
             <%@every.each do |a|%>
