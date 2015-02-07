@@ -13,4 +13,6 @@ Official Website for Troop 5 Boy Scouts of America
 
 *Master Form-used to search and delete existing captions
 
-Last Updated: February 5, 2015
+*Edit Form-used to edit existing captions and titles of captions
+
+Last Updated: February 6, 2015
