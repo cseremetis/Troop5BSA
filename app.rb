@@ -15,9 +15,11 @@ class App < Sinatra::Base
     def find(caption)
         @every = Page.all
 
+        #iterates through all tables in the database
+        #to find the one with the given title value
         @every.each do |a|
-            if a.title == caption
-                @unwantedObject = Page.where(:title => caption)
+            if a.title.downcase == caption.downcase.strip
+                @mutableCaption = Page.where(:title => caption).take
             end
         end
     end
@@ -75,7 +77,27 @@ class App < Sinatra::Base
         find(params[:title])
 
         #deletes caption
-        Page.delete(@unwantedObject)
+        Page.delete(@mutableCaption)
+
+        redirect('/master33034112AZY774NNOO0')
+    end
+
+    post '/edit' do
+
+        #find given form title
+        find(params[:title])
+
+        $changedCaption = @mutableCaption
+
+        erb(:edit) 
+    end
+
+    post '/change' do
+
+        #updates existing caption
+        $changedCaption.title = params[:title]
+        $changedCaption.notification = params[:caption]
+        $changedCaption.save 
 
         redirect('/master33034112AZY774NNOO0')
     end
