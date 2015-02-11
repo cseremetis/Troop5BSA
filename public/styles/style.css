@@ -112,7 +112,7 @@ textarea{
 }
 
 /*h1 label on the FAQs page*/
-#faqsLabel{
+#faqsLabel:hover{
     -webkit-animation-name: shake;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-iteration-count: infinite;
@@ -135,9 +135,23 @@ textarea{
     -webkit-transition-timing-function: linear;
 }
 
-#captionLabel{
+/*label to mark search and edit text box*/
+#editSearchLabel{
     color: white;
 }
 
+#masterLabel:hover{
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 0.5s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-transition-timing-function: linear;
+}
 
+#superSecret{
+    color: white;
+}
+
+#captionLabel{
+    color: white;
+}
 

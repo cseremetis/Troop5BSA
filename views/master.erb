@@ -26,7 +26,7 @@
             </div>
 
             <div class="row text-center">
-                <h1>Master</h1>
+                <h1 id="masterLabel" onclick="changeText()">Master</h1>
             </div>
             <div class="col-md text-center">
                 <!--this is where captions can be searched and deleted-->
@@ -39,7 +39,7 @@
             <br>
             <div class="col-md text-center">
                 <!--this is where captions can be searched and edited-->
-                <h2>Search and Edit captions here:</h2>
+                <h2 id="editSearchLabel">Search and Edit captions here:</h2>
                 <form type="input" action="edit" method=POST> 
                     <input type="text" name="title">
                     <input type="submit" value="edit caption">

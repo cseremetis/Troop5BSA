@@ -67,6 +67,7 @@ class App < Sinatra::Base
         @newCaption.title = params[:title].strip
         @newCaption.form_id = params[:form_id]
         @newCaption.notification = params[:description]
+        @newCaption.pic = params[:pic]
         @newCaption.save
 
         redirect('/master33034112AZY774NNOO0')
@@ -95,7 +96,7 @@ class App < Sinatra::Base
     post '/change' do
 
         #updates existing caption
-        $changedCaption.title = params[:title]
+        $changedCaption.title = params[:title].strip
         $changedCaption.notification = params[:caption]
         $changedCaption.save 
 

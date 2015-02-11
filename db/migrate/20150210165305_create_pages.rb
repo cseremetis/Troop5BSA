@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration
         t.string :title
         t.string :form_id
         t.string :notification
+        t.string :pic
     end
   end
 
