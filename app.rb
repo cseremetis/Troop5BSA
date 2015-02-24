@@ -18,32 +18,38 @@ class App < Sinatra::Base
         #iterates through all tables in the database
         #to find the one with the given title value
         @every.each do |a|
-            if a.title.downcase == caption.downcase.strip
+            if a.title == caption.strip
                 @mutableCaption = Page.where(:title => caption).take
             end
         end
     end
 
+    #home page
     get '/' do
         erb(:index)
     end
 
+    #FAQs page
     get '/faqs' do
         @allFAQs = []
         @allFAQs = Page.where(:form_id => "FAQs")
         erb(:faqs)
     end
 
+    #admin page used to add forms
     get '/admin33034112AZY774NNOO0' do
         #administrative page
         #used to add new forms to the website
         erb(:admin)
     end
 
+    #super secret page 
     get '/superSecret' do
+        system("say 'welcome to the super secret page'")
         erb(:superSecret)
     end
 
+    #upcoming trips page
     get '/UpcomingTrips' do
         #makes an array of all upcoming trips to be shown on form
         @allTrips = []
@@ -51,6 +57,7 @@ class App < Sinatra::Base
         erb(:UpcomingTrips)
     end
 
+    #master controller page
     get '/master33034112AZY774NNOO0' do
         #administrative page
         #used to iterate through and delete web forms
@@ -59,12 +66,14 @@ class App < Sinatra::Base
         erb(:master)
     end
 
+    #used to add a new caption
+    #information is given in admin.erb
     post '/addPage' do
 
         #for administrative purposes
         #used to add new pages to the website
         @newCaption = Page.new
-        @newCaption.title = params[:title].strip
+        @newCaption.title = params[:title].strip.upcase
         @newCaption.form_id = params[:form_id]
         @newCaption.notification = params[:description]
         @newCaption.pic = params[:pic]
@@ -73,9 +82,11 @@ class App < Sinatra::Base
         redirect('/master33034112AZY774NNOO0')
     end
 
+    #used to delete an existing caption
+    #information is given in the search bar on master.erb
     post '/delete' do
         #searches the database for the unwanted caption
-        find(params[:title])
+        find(params[:title].upcase)
 
         #deletes caption
         Page.delete(@mutableCaption)
@@ -83,28 +94,44 @@ class App < Sinatra::Base
         redirect('/master33034112AZY774NNOO0')
     end
 
+    #used to find information to pull onto edit.erb
+    #information is given in the search bar on master.erb
     post '/edit' do
 
         #find given form title
-        find(params[:title])
+        find(params[:title].upcase)
 
         $changedCaption = @mutableCaption
 
         erb(:edit) 
     end
 
+    #used to edit an existing caption
     post '/change' do
 
         #updates existing caption
         $changedCaption.title = params[:title].strip
         $changedCaption.notification = params[:caption]
+        $changedCaption.pic = params[:pic]
         $changedCaption.save 
 
         redirect('/master33034112AZY774NNOO0')
     end
 
+    #when a user searches for a specific caption
+    post '/search' do
+        if params[:captionTitle].downcase.strip == "open sesame"
+            redirect('/superSecret')
+        elsif params[:captionTitle].downcase.strip == "faqs"
+            redirect('/faqs')
+        elsif params[:captionTitle].downcase.strip =="upcoming trips"
+            redirect('/UpcomingTrips')
+        else            
+            find(params[:captionTitle].upcase.strip)
+            erb(:searchCaption)
+        end
+    end
 end
-
 
 
 
