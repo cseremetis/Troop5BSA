@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<!--created by Christian Seremetis on February 5, 2014-->
+<!--created by Christian Seremetis on February 5, 2015-->
 <!--displays upcoming troops on the Troop 5 official website-->
 
 <head>
-    <title>Troop 5 BSA FAQs</title>
+    <title>Upcoming Trips</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 </head>
@@ -15,9 +15,15 @@
         <div class="row">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
                 <ul class="nav nav-pills">
-                    <li role="presentation" class="active"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="/">Home</a></li>
                     <li role="presentation"><a href="faqs">FAQs</a></li>
-                    <li role="presentation"><a href="UpcomingTrips">Upcoming Trips</a></li>
+                    <li role="presentation" class="active"><a href="UpcomingTrips">Upcoming Trips</a></li>
+                    <li role="presentation">
+                        <form type="input" action="search" method=POST>
+                            <input class="box" type="text" name="captionTitle">
+                            <input class="box" type="submit" value="Search Our Site">
+                        </form>
+                    </li>
                 </ul>
             </nav>
         </div>
