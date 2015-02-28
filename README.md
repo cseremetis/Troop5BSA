@@ -16,3 +16,8 @@ Official Website for Troop 5 Boy Scouts of America
 *Edit Form-used to edit existing captions and titles of captions
 
 Last Updated: February 6, 2015
+
+#Credit
+=============
+
+Credit to Patrick Gillespie (http://patorjk.com/games/snake) for javascript snake and snake.css
