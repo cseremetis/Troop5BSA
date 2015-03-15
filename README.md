@@ -15,4 +15,8 @@ Official Website for Troop 5 Boy Scouts of America
 
 *Edit Form-used to edit existing captions and titles of captions
 
-Last Updated: February 6, 2015
+*searchCaption form-appears whenever the search bar is used
+
+gems: rack, activerecord, sinatra, pry, shotgun, sqlite3
+
+Last Updated: February 18, 2015
