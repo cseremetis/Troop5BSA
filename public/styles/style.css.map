@@ -1,7 +1,6 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
-"names": [],
-"file": "style.css"
+"sources": [http://fonts.googleapis.com/css?family=Droid+Serif:700, http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300],
+"names": [none],
+"file": "style.css", "snake.css"
 }
