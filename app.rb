@@ -1,7 +1,7 @@
 #created February 4, 2015 by Christian Seremetis
 
 require 'bundler'
-Bundler.require 
+Bundler.require
 
 require_relative './models/caption.rb'
 require_relative './models/page.rb'
@@ -101,7 +101,7 @@ class App < Sinatra::Base
         #find given form title
         find(params[:title].upcase)
 
-        $changedCaption = @mutableCaption
+        @@changedCaption = @mutableCaption
 
         erb(:edit) 
     end
@@ -110,10 +110,10 @@ class App < Sinatra::Base
     post '/change' do
 
         #updates existing caption
-        $changedCaption.title = params[:title].strip
-        $changedCaption.notification = params[:caption]
-        $changedCaption.pic = params[:pic]
-        $changedCaption.save 
+        @@changedCaption.title = params[:title].strip
+        @@changedCaption.notification = params[:caption]
+        @@changedCaption.pic = params[:pic]
+        @@changedCaption.save 
 
         redirect('/master33034112AZY774NNOO0')
     end
