@@ -19,9 +19,7 @@ Official Website for Troop 5 Boy Scouts of America
 
 gems: rack, activerecord, sinatra, pry, shotgun, sqlite3
 
-Last Updated: February 18, 2015
-=======
-Last Updated: February 6, 2015
+Last updated: March 15, 2015
 
 # Credit
 =============
