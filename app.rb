@@ -19,7 +19,7 @@ class App < Sinatra::Base
         #to find the one with the given title value
         @every.each do |a|
             if a.title == caption.strip
-                $mutableCaption = Page.where(:title => caption).take
+                @mutableCaption = Page.where(:title => caption).take
             end
         end
     end
@@ -89,7 +89,7 @@ class App < Sinatra::Base
         find(params[:title].upcase)
 
         #deletes caption
-        Page.delete($mutableCaption)
+        Page.delete(@mutableCaption)
 
         redirect('/master33034112AZY774NNOO0')
     end
@@ -101,6 +101,8 @@ class App < Sinatra::Base
         #find given form title
         find(params[:title].upcase)
 
+        @@changedCaption = @mutableCaption
+
         erb(:edit) 
     end
 
@@ -108,10 +110,10 @@ class App < Sinatra::Base
     post '/change' do
 
         #updates existing caption
-        $mutableCaption.title = params[:title].strip
-        $mutableCaption.notification = params[:caption]
-        $mutableCaption.pic = params[:pic]
-        $mutableCaption.save 
+        @@changedCaption.title = params[:title].strip
+        @@changedCaption.notification = params[:caption]
+        @@changedCaption.pic = params[:pic]
+        @@changedCaption.save 
 
         redirect('/master33034112AZY774NNOO0')
     end
@@ -126,11 +128,6 @@ class App < Sinatra::Base
             redirect('/UpcomingTrips')
         else            
             find(params[:captionTitle].upcase.strip)
-
-            if $mutableCaption.title != params[:captionTitle].upcase.strip
-                $mutableCaption = nil
-            end
-
             erb(:searchCaption)
         end
     end

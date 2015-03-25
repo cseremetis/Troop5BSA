@@ -30,7 +30,7 @@
 
             <!--if the administrator searched for a non-existent form, they are deferred
             to a default form-->
-            <%if $mutableCaption == nil%>
+            <%if @mutableCaption == nil%>
                 <div class="row text-center">
                     <h1>Your Search Had No Results</h1>
                 </div>
@@ -64,18 +64,18 @@
                             <h2>Title:</h2>
                             <!--this is where the admin can change the title of a caption-->
                             <textarea class="text" name="title" rows="1" cols="50">
-                                <%=$mutableCaption.title%>
+                                <%=@mutableCaption.title%>
                             </textarea>
                             <br>
                             <h2 id="picLabel">Picture URL:</h2>
                             <textarea class="text" name="pic" rows="1" cols="50">
-                                <%=$mutableCaption.pic%>
+                                <%=@mutableCaption.pic%>
                             </textarea>
                             <br>
                             <h2 id="captionLabel">Caption:</h2>
                             <!--this is where the admin can change the caption itself-->
                             <textarea class="text" name="caption" rows="15" cols="150">
-                                <%=$mutableCaption.notification%>
+                                <%=@mutableCaption.notification%>
                             </textarea>
                             <br>
                             <input type="submit" value="edit caption">
