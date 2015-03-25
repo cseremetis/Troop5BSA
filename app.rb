@@ -6,7 +6,7 @@ Bundler.require
 require_relative './models/caption.rb'
 require_relative './models/page.rb'
 
-set :database, "sqlite3:page.db"
+set :database, "sqlite3:db/page.db"
 class App < Sinatra::Base
 
     #used when objects are to be deleted
@@ -126,6 +126,11 @@ class App < Sinatra::Base
             redirect('/UpcomingTrips')
         else            
             find(params[:captionTitle].upcase.strip)
+
+            if $mutableCaption.title != params[:captionTitle].upcase.strip
+                $mutableCaption = nil
+            end
+
             erb(:searchCaption)
         end
     end
