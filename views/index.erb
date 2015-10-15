@@ -2,6 +2,12 @@
 <!--created Febrary 4, 2015 by Christian Seremetis-->
 
 <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Christian Seremetis">
+    <meta name="description" content="public website for Troop 5 BSA">
+    <meta name="keywords" content="scouting, troop 5">
+    <meta name="dcterms.rightsHolder" content="Ridgewood Troop 5">
+    <meta name="dcterms.dateCopyrighted" content="2015">
     <title>Troop 5 BSA</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -11,7 +17,6 @@
 <body background="photos/lake.JPG">
     <div class="wrapper">
     <!--navbar-->
-        
         <div class="row">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
                 <ul class="nav nav-pills">
@@ -34,14 +39,14 @@
         </div>
         <div class="container">
             <div class="col-md text-center">
-                <img id="symbol" width="200px" height="200px" src="http://jasonhewlett.com/wp-content/uploads/2014/05/boy-scouts.jpg" onclick="change()">
+                <img id="symbol" width="150px" height="200px" src="photos/scoutSign.png" onclick="change()">
                 <script type="text/javascript">
                     function change() {
                         var pic = document.getElementById('symbol');
-                        if (pic.src.match("http://jasonhewlett.com/wp-content/uploads/2014/05/boy-scouts.jpg")) {
-                            pic.src = "http://wonderopolis.org/wp-content/uploads/2011/03/youth-with-silly-face_shutterstock_7546201.jpg";
+                        if (pic.src.match("photos/scoutSign.png")) {
+                            pic.src = "photos/kid.jpeg";
                         } else {
-                            pic.src = "http://jasonhewlett.com/wp-content/uploads/2014/05/boy-scouts.jpg";
+                            pic.src = "photos/scoutSign.png";
                         };
                     }
                 </script>
@@ -51,6 +56,11 @@
             </h3>
         </div>
     </div>
+    <footer>
+        <div class="col-md text-center">
+            <p>Copyright &copy; Ockanickon Scout Reservation 2015</p>
+        </div>
+    </footer>
 </body>
 
 
